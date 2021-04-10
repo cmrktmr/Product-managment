@@ -13,5 +13,9 @@ Vue.http.put("https://urun-islemleri-6d2fd-default-rtdb.firebaseio.com/trade-res
 }
 
 export const getTradeResult = ({commit}) =>{
-
+ Vue.http.get("https://urun-islemleri-6d2fd-default-rtdb.firebaseio.com/trade-result.json")
+ .then(response =>{
+     console.log(response);
+     commit("updateTradeResult",response.body)
+ })
 }
